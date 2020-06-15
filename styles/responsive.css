@@ -1,0 +1,37 @@
+/*de 0 até 900px*/
+@media (max-width: 900px) {
+    #page-home{
+        background-position-x: 70vw;
+    }
+
+    #page-home .content {
+        align-items: center;
+    }
+
+    #page-home header a {
+        position: absolute; /*cria outro eixo sob a tela*/
+        bottom: 48px; /* desço o conteudo*/
+        /*posicionando no centro*/
+        left: 50%;
+        transform: translateX(-50%); /*desconta os 50% do elemento*/
+    }
+ /* verificar, não pegou*/
+    #page-home main, 
+    #page-home main h1,
+    #page-home main p {
+        align-items: center;
+    }
+}
+
+/* de 1440 para cima*/
+@media(min-width: 1700px) {
+    #page-home{
+        background-position-x: 40vw;
+    }
+}
+
+@media (max-height: 760px) {
+    #page-home{
+        background-position-y: 200px;
+    }
+}
