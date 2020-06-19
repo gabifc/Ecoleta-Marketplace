@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/creat-point.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <title>Criar ponto de coleta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="page-create-point">
+
+        <header>
+            <img src="assets/icones/logo.svg" alt="logomarca">
+            <a href="http://"> <span></span> Voltar para home</a>
+        </header>
+
+        <form action="">
+
+            <h1>Cadastre seu ponto de coleta</h1>
+
+            <fieldset>
+                <!--Semantica para separar no lugar da div-->
+                <legend>
+                    <!-- dentro do fieldset colocar legend-->
+                    <h2> Dados da entidade</h2>
+                </legend>
+
+                <div class="field">
+                    <label for="">Nome da entidade</label>
+                    <input type="text" name="name" id="">
+                </div>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="adress">Endereço</label>
+                        <input type="text" name="adress">
+                    </div>
+
+                    <div class="field">
+                        <label for="adress">Número/Complemento</label>
+                        <input type="text" name="adress2">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="state">Estado</label>
+                        <select name="uf" id="">
+                            <option value="">Selecione o Estado</option>
+                            <!--esta opção foi criada pra a função change que vai do estado 0 para o 1
+                            <option value="1">Opção o Estado</option> -->
+                        </select>
+                        <!--input oculto (aparece apenas no url) criado para manupular os dados de id do retorno do link -->
+                        <input type="hidden" name="state">
+                    </div>
+
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <!-- disable não permite selecionar a cidade antes do estado-->
+                        <select name="city" disabled>
+                            <option value="">Selecione a Cidade</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    <h2> Ítens de coleta</h2>
+                </legend>
+            </fieldset>
+
+
+            <button type="submit">Cadastrar ponto de coleta</button>
+
+        </form>
+
+    </div>
+
+
+<script src="Javascript/Creat-point.js"></script>
+</body>
+
+</html>
