@@ -52,7 +52,7 @@ function getCities(event) {
     const citySelect = document.querySelector("select[name=city]")
 
     // ( Parte 2 ) tratando o retorno do link, ver abaixo
-    // este input eu vou mudar o valor dele cada vez que a função getCities for chamada. A gunção getCities é chamada toda vez que eu troco o uf
+    //  ( Parte 2 ) este input eu vou mudar o valor dele cada vez que a função getCities for chamada. A gunção getCities é chamada toda vez que eu troco o uf
     const stateInput = document.querySelector("input[name=state]")
 
     // ( event.target é o select e eu pego o valor dele)
@@ -60,10 +60,16 @@ function getCities(event) {
 
     // ( Parte 2 ) tratando o retorno do link 
     const indexOfSelectedState = event.target.selectedIndex
-    // aqui vai de 0 a 26 pq são 27 estados e para pegar dinamicamente qual option foi selecionado eu crio a const indexOfSelectedState
+    // ( Parte 2 ) aqui vai de 0 a 26 pq são 27 estados e para pegar dinamicamente qual option foi selecionado eu crio a const indexOfSelectedState
     stateInput.value = event.target.options[indexOfSelectedState].text
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios` // url dinamica com a const ufValue
+
+    // ( Parte 3 ) antes dele fazer a chamadada fetch no app eu limpo o campo e bloqueio ai ele vai la no api fetch buscar e quando tiver o novo estado selecionado ele entra nestas duas condições abaixo:cria um novo option com os valores e descloqueia para o user selecionar a cidade.
+    // ( Parte 3 ) o campo cidade começa vazio e
+    citySelect.innerHTML = "<option value> Selecione a Cidade</option>"
+    // ( Parte 3 ) deixo o campo bloqueado de novo
+    citySelect.disabled = true
 
     //fetch para preencher o select cidade
     fetch(url)
@@ -96,7 +102,8 @@ document
 // vamos tratar dentro da função getCities ver a função acima. ver ( Parte 2 )
 // depois de implementar os codigos ( Parte 2 ) acima acesso o console,  Elements, seleciono o input e quando eu selecionar um uf ele add o value="nome do estado selecionado"
 
-// *** SELEÇÃO REPETIDA DE CIDADES ****
+// *** SELEÇÃO REPETIDA DE CIDADES ( Parte 3 ) ****
 // identificamos o bug que quando uma UF é selecionado e carrega a lista cidades, se o user trocar para outro estado a lista de cidades não atualiza.
+// para resolver eu preciso limpar o campo cidades a cada seleção de estado antes de fazer a chamada fetch do api. 
 
 
