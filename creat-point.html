@@ -35,25 +35,25 @@
 
                 <div class="field">
                     <label for="">Nome da entidade</label>
-                    <input type="text" name="name" id="">
+                    <input type="text" name="name" id="" required>
                 </div>
 
                 <div class="field-group">
                     <div class="field">
                         <label for="adress">Endereço</label>
-                        <input type="text" name="adress">
+                        <input type="text" name="adress" required>
                     </div>
 
                     <div class="field">
                         <label for="adress">Número/Complemento</label>
-                        <input type="text" name="adress2">
+                        <input type="text" name="adress2" required>
                     </div>
                 </div>
 
                 <div class="field-group">
                     <div class="field">
                         <label for="state">Estado</label>
-                        <select name="uf" id="">
+                        <select name="uf" id="" required>
                             <option value="">Selecione o Estado</option>
                             <!--esta opção foi criada pra a função change que vai do estado 0 para o 1
                             <option value="1">Opção o Estado</option> -->
@@ -65,7 +65,7 @@
                     <div class="field">
                         <label for="city">Cidade</label>
                         <!-- disable não permite selecionar a cidade antes do estado-->
-                        <select name="city" disabled>
+                        <select name="city" disabled required>
                             <option value="">Selecione a Cidade</option>
                         </select>
                     </div>

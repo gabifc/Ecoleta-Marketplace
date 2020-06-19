@@ -76,7 +76,8 @@ function getCities(event) {
     .then( res => res.json() )
     .then ( cities => {
         for ( const city of cities ){
-            citySelect.innerHTML += `<option value = "${city.id}"> ${city.nome}</option>`
+            // ( Parte 4 ) eu troco de ${city.id} para ${city.nome}
+            citySelect.innerHTML += `<option value = "${city.nome}"> ${city.nome}</option>`
         }
         // no HTML está disable se não preenhcer o estado, para habilitar depois que o user seleciona o estado
         citySelect.disabled = false
@@ -106,4 +107,10 @@ document
 // identificamos o bug que quando uma UF é selecionado e carrega a lista cidades, se o user trocar para outro estado a lista de cidades não atualiza.
 // para resolver eu preciso limpar o campo cidades a cada seleção de estado antes de fazer a chamada fetch do api. 
 
+
+// ***** TRATANDO O LINK PARTE DA CIDADE ( Parte 4) *****
+// Neste momento do codigo o estado vem com o nome, mas a cidade ainda vem ID e no banco de dados quero guardar com o nome.
+// No for of eu troco de ${city.id} para ${city.nome}
+
+// Para garantir que este formulario só sera enviado quando estiver todo preenchido eu coloco required no input na pagina do HTML
 
