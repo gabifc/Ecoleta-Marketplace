@@ -52,13 +52,16 @@ function getCities(event) {
     const citySelect = document.querySelector("select[name=city]")
 
     // ( Parte 2 ) tratando o retorno do link, ver abaixo
-    
+    // este input eu vou mudar o valor dele cada vez que a função getCities for chamada. A gunção getCities é chamada toda vez que eu troco o uf
+    const stateInput = document.querySelector("input[name=state]")
 
     // ( event.target é o select e eu pego o valor dele)
     const ufValue = event.target.value // aqui eu seleciono o valor o id e coloco na url de modo interpolado para que possa ser utilizados todos os 27 ids dependendo da seleção do user.
 
     // ( Parte 2 ) tratando o retorno do link 
-    
+    const indexOfSelectedState = event.target.selectedIndex
+    // aqui vai de 0 a 26 pq são 27 estados e para pegar dinamicamente qual option foi selecionado eu crio a const indexOfSelectedState
+    stateInput.value = event.target.options[indexOfSelectedState].text
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios` // url dinamica com a const ufValue
 
@@ -80,5 +83,20 @@ document
 .addEventListener("change", getCities) // aqui chama a função getCities 
 
 
+// **** O RETORNO DO LINK ( Parte 2 ) ****
+// quando eu clico no botão enviar ele retorna estes dados no link. 
+// http://127.0.0.1:5500/creat-point.html?name=&adress=&adress2=&uf=14&city=1400175
+
+// uf e estado estão com seus ids / numeros. Existem duas opções para tratar este dado e enviar com o nome certinho, no front-end ou com o banco de dados no backend que seria salvando a id no banco de dados e usando novamente (fazendo outra chamada para o api).
+
+// ***tratando estes dados do link no front-end***
+// primeiro crio no HTML um input do tipo hidden
+// quando clicar para submeter (sem selecionar nenhum estado) ele retorna http://127.0.0.1:5500/creat-point.html?name=&adress=&adress2=&uf=&state=
+// o state está ali no final, mas não aparece nenhum input na tela. 
+// vamos tratar dentro da função getCities ver a função acima. ver ( Parte 2 )
+// depois de implementar os codigos ( Parte 2 ) acima acesso o console,  Elements, seleciono o input e quando eu selecionar um uf ele add o value="nome do estado selecionado"
+
+// *** SELEÇÃO REPETIDA DE CIDADES ****
+// identificamos o bug que quando uma UF é selecionado e carrega a lista cidades, se o user trocar para outro estado a lista de cidades não atualiza.
 
 
