@@ -116,9 +116,24 @@ document
 
 
 // ****** ITENS DE COLETA ******
+
 // pegar todos os lis
-const itemsToCollect = document.querySelectorAll("items-grid li")
-for (const items of itemsToCollect) {
-    items.
+const itemsToCollect = document.querySelectorAll(".items-grid li")
+for (const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem)
 }
 
+// Função que seleciona e remove seleção das imagens no form.
+function handleSelectedItem(event) {
+    // console.log(event.target) // ao clicar ele pega a img separada do spam, preciso corrigir no css.
+   // console.log(event.target.dataset.id) // retorna o ida já que eu usei o data-id la no html. Agora ele consigo armazer em uma variavel.
+   // vou armazenar a li em uma variavel 
+   const itemLi = event.target
+   // armazenar li com id em outra variavel
+    const itemId = itemLi.dataset.id
+    // feito isso, vou no html e removo a class selected pq eu vou criar outra com o javascript. 
+
+    // add e remover classes no LI do HTML com JS
+    itemLi.classList.toggle("selected")
+
+}

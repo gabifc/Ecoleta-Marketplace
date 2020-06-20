@@ -152,3 +152,11 @@ form button:hover {
 
 }
 
+/* seleciono a img e o span e removo os eventos de point para a função handleSelectedItem  
+quando eu clicar ele me trz o li inteiro e não só a img ou o spam*/
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+}
+
