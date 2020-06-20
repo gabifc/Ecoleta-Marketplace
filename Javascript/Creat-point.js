@@ -114,3 +114,11 @@ document
 
 // Para garantir que este formulario só sera enviado quando estiver todo preenchido eu coloco required no input na pagina do HTML
 
+
+// ****** ITENS DE COLETA ******
+// pegar todos os lis
+const itemsToCollect = document.querySelectorAll("items-grid li")
+for (const items of itemsToCollect) {
+    items.
+}
+

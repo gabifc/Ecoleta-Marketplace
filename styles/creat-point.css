@@ -109,3 +109,46 @@ form button {
 form button:hover {
     background-color: #2fb86e;
 }
+
+.items-grid {
+    /* permite posicionar multidirecionalmente pq eu quero 2 linhas e 3 colunas */
+    display: grid;
+    /* aqui eu seleciono a quantidade de colunas
+    posso trabalhar com px ou a melhor forma é fr = frações
+    cada 1fr indica um numero de coluna que quero*/
+    grid-template-columns:  1fr 1fr 1fr;
+    /*propriedade para separar (dar margem) especifica do grid*/
+    gap: 16px;
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 120px;
+    padding: 32px 24px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*este space-between está seguindo o fluexo de baixo para cima, acompanhando a coluna*/
+    justify-content: space-between;
+    text-align:center;
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+}
+
+.items-grid li span {
+    margin-top: 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: var(--title-color)
+}
+
+.items-grid li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79;
+
+}
+
