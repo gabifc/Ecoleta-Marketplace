@@ -115,13 +115,19 @@ document
 // Para garantir que este formulario só sera enviado quando estiver todo preenchido eu coloco required no input na pagina do HTML
 
 
-// ****** ITENS DE COLETA ******
+// ****** ITENS DE COLETA (Parte 5) ******
 
 // pegar todos os lis
 const itemsToCollect = document.querySelectorAll(".items-grid li")
 for (const item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem)
 }
+
+  // atualizar o campo escondido com os itens selecionados (Parte 5)
+  const collectedItems = document.querySelector("input[name=items]")
+
+// itens da seleção - recebe os itens filtrados
+let selectedItems = [] // (Parte 5)
 
 // Função que seleciona e remove seleção das imagens no form.
 function handleSelectedItem(event) {
@@ -133,7 +139,40 @@ function handleSelectedItem(event) {
     const itemId = itemLi.dataset.id
     // feito isso, vou no html e removo a class selected pq eu vou criar outra com o javascript. 
 
-    // add e remover classes no LI do HTML com JS
+    // add e remover classes de seleção no LI do HTML com JS
     itemLi.classList.toggle("selected")
 
+    // (Parte 5) Preciso verificar se tem items selecionados e se tiver preciso pegar os items selecionados.
+    // Neste função ele verifica cada item e atribui true se o o item e o item id forem iguais.
+    const alreadySelected = selectedItems.findIndex( item => {
+        const itemFound = item == itemId // retorna true ou false
+        return itemFound
+    })
+    // função menos verbosa
+    //const alredySelected = selectedItems.findIndex( item => item == itemId )
+    // console.log(alreadySelected) retorn -1 pq ainda não existe nenhum item na lista selectedItems. Por isso o if é >=0
+
+    //Se já estiver selecionado remover a seleção. (Parte 5)
+    if (alreadySelected >= 0) {
+        const filteredItems = selectedItems.filter( item => {
+            const itemsIsDifferent = item != itemId // false
+            return itemsIsDifferent
+        })
+        
+        selectedItems = filteredItems
+    } else {
+        // Se não estiver selecionado, add a seleção (Parte 5)
+        selectedItems.push(itemId)
+    }
+    // console.log(selectedItems) itens entrando e saindo do array
+
+    // atualiar o campo escondido com os itens selecionados (Parte 5)
+   // document.querySelector("input[name=items]") foi colocado acima fora da função. Aqui eu só atribuo o valor.
+   collectedItems.value = selectedItems
 }
+
+
+
+// Pegar os IDS para enviar no form com input hidden e assim ele vai aparecer no link. Preciso verificar se tem items selecionados e se tiver preciso pegar os items selecionados. Se já estiver selecionado remover a seleção.(Parte 5)
+
+
