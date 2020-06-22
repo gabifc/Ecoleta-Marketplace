@@ -116,7 +116,14 @@ document
 
 
 // ****** ITENS DE COLETA (Parte 5) ******
-
+// nesta etapa precisa selecionar incluir no css este bloco de texto para ele pegar o li todo e naõ span e img separado
+/**
+ * .items-grid li img,
+ * .items-grid li span {
+ * pointer-events: none;
+ * }
+ * 
+ *  */ 
 // pegar todos os lis
 const itemsToCollect = document.querySelectorAll(".items-grid li")
 for (const item of itemsToCollect) {

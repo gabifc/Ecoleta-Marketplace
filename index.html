@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/modal.css">
     <link rel="stylesheet" href="../styles/responsive.css">
-    <title>Ecoleta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    
+    <title>Ecoleta Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -28,12 +30,28 @@
                 <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
 
                 <a href="#"><span></span> <strong>Pesquisar pontos de coleta</strong> </a>
-                
             </main>
-
         </div>
     </div>
 
+    <div id="modal" class="hide">
+        <div class="content">
+            <div class="header">
+                <h1>Pontos de Coleta</h1>
+                <a href="">Fechar</a>
+            </div>
+            <form action="">
+                <label for="search">Cidade</label>
+                <div class="search field">
+                    <input type="text" name="search" placeholder="Pesquise por Cidade">
+                    <button>
+                        <img src="../assets/icones/search.svg" alt="Buscar pontos de coleta">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="../Javascript/index.js"></script>
 </body>
 
 </html>
