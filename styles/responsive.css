@@ -15,11 +15,16 @@
         left: 50%;
         transform: translateX(-50%); /*desconta os 50% do elemento*/
     }
- /* verificar, não pegou*/
+ /* verificar, não pegou o dele só tem o main linha 19*/
     #page-home main, 
     #page-home main h1,
     #page-home main p {
         align-items: center;
+    }
+
+    /*pagina de resultados responsividade dos cards*/
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
     }
 }
 
