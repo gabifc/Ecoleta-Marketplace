@@ -15,16 +15,25 @@
         left: 50%;
         transform: translateX(-50%); /*desconta os 50% do elemento*/
     }
- /* verificar, não pegou o dele só tem o main linha 19*/
-    #page-home main, 
-    #page-home main h1,
-    #page-home main p {
+ 
+    #page-home main{
         align-items: center;
-    }
+    } 
 
     /*pagina de resultados responsividade dos cards*/
-    #page-search-results .cards{
+    #page-search-results .cards {
         grid-template-columns: 1fr;
+    }
+    #page-search-results .cards img {
+        height: 250px;
+    }
+
+    /*pagina create-point responsividade do form*/
+    #page-create-point .field-group {
+        flex-direction: column;
+    }
+    #page-create-point .field-group .field + .field {
+        margin-left: 0;
     }
 }
 

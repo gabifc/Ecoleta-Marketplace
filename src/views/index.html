@@ -1,44 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!-- com o extends ele herda tudo que está no layout e usar no index.html -->
+{% extends "layout.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
+{% set pageId = "page-home" %}
+
+{% block styles %}
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/modal.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
-    <title>Ecoleta Marketplace</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap"
-        rel="stylesheet">
+{% endblock styles %}
 
-</head>
+{% block content %}
+    <div class="content">
 
-<body>
+        <header>
+            <img src="../assets/icones/logo.svg" alt="logomarca">
+            <!--aqui href removo .html por causa do servidor-->
+            <a href="create-point">
+                <span></span>
+                Cadastre um ponto de coleta</a>
+        </header>
 
-    <div id="page-home">
-        <div class="content">
+        <main>
+            <!--<h1>{{title}}</h1> para tornar dinamico com o numjucks-->
+            <h1>Seu marketplace de coleta de resíduos</h1>
 
-            <header>
-                <img src="../assets/icones/logo.svg" alt="logomarca">
-                <!--aqui href removo .html por causa do servidor-->
-                <a href="create-point"> <span></span> Cadastre um ponto de coleta</a>
-            </header>
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
 
-            <main>
-                <!--<h1>{{title}}</h1> para tornar dinamico com o numjucks-->
-                <h1>Seu marketplace de coleta de resíduos</h1>
-
-                <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
-
-                <a href="#"><span></span> <strong>Pesquisar pontos de coleta</strong> </a>
-            </main>
-        </div>
+            <a href="#">
+                <span></span>
+                <strong>Pesquisar pontos de coleta</strong>
+            </a>
+        </main>
     </div>
+{% endblock content %}
 
-     {% include "partials/modal.html" %}
-    
-<script src="../Javascript/index.js"></script>
-</body>
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
 
-</html>
+{% block scripts %}
+    <script src="../Javascript/index.js"></script>
+{% endblock scripts %}

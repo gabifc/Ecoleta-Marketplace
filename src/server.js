@@ -50,6 +50,7 @@ server.get("/create-point", (req, res) => {
 
 // Passo 7 trocar sendFile por required e deixar só o link html em string depois 
 server.get("/", (req, res) => {
+    // return res.render("index.html", { title: "Um titulo"}) - no codigo dele esta assim **verificar**
     return res.render("index.html")
 })
 // esta primeira linha é o link localhost o conteudo que vem depois do "/" vai preencher depois do 3000
