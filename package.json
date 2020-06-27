@@ -1,0 +1,27 @@
+{
+  "name": "Ecoleta",
+  "version": "1.0.0",
+  "description": "Projeto em desenvolvimento  \r Tecnologias utilizadas:  \r Linguagem: Javascript\r Node.js  \r Banco de dados: SQL  \r SQLite",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabifc/Ecoleta-Marketplace.git"
+  },
+  "keywords": [],
+  "author": "Gabrielle Fernandes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabifc/Ecoleta-Marketplace/issues"
+  },
+  "homepage": "https://github.com/gabifc/Ecoleta-Marketplace#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
