@@ -1,3 +1,4 @@
+
 #page-search-results {
     width: 90%;
     max-width: 1100px;
@@ -76,17 +77,34 @@ main .card p {
     font-family: Roboto, sans-serif;
 
 }
+/*Configuração depois da correção do erro. Passar para o ínicio da pagina*/
+body {
+    background-color: white;
+}
 
 /* como se fosse uma folha de papel add em cima da pagina e uso z-index para mandar para tras. Criando a divisão branca no body*/
 body::after {
-    content: "";
-    position:fixed;
-    background: white;
-    /*essas propriedades 0 colocam no body todo, só em cima que estou dando uma margem para aparecer a cor cinza defenida como principal do body*/
-    top: 260px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    /* menos 1 para jogar para trás do conteudo da pagina*/
-    z-index: -1;
+   content: "";
+   position: absolute;
+   background:#f0f0f5;
+   /*essas propriedades 0 colocam no body todo, só em cima que estou dando uma margem para aparecer a cor cinza defenida como principal do body*/
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   height: 16rem;
+   /* menos 1 para jogar para trás do conteudo da pagina*/
+   z-index: -1;
 }
+
+/*primeira versão
+body::after {
+   content: "";
+   position: fixed;
+   background:white;
+   top: 260px;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: -1;
+} */

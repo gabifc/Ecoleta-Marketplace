@@ -105,12 +105,16 @@ server.post("/savepoint", (req, res) =>{
     function afterInsertData(err) {
         if (err) {
             console.log(err)
+            // incluindo trat de erro para o usuário
+            return res.send("Erro no cadastro!")
         }
         console.log("Cadastro ok")
         console.log(this)
 
     // o return aqui será executado quando o cadastro tiver sido inserido no banco de dados
-        return res.send("POST OK")
+    // uso deste modo return res.send("POST OK") para teste e depois troco para
+    return res.render("create-point.html", {saved: true})
+
     }
     db.run(query, values, afterInsertData)
 
@@ -134,9 +138,16 @@ server.get("/search", (req, res) => {
 // BANCO DE DADOS: aqui eu vou chamar o select criado no db.js para pegar os dados do banco de dados
 
 server.get("/search", (req, res) => {
+
+    //FAZER NO FINAL PARA CONFIGURAR A PESQUISA POR CIDADE
+    const search = req.query.search
+    if(search == ""){
+        // pesquisa vazia mostra nenhum local encontrado que foi configurado lá no bloco if da pagina search-results.html
+        return res.render("search-results.html", {total:0})
+    }
     
     // BANCO DE DADOS: chamando o db.all Select criado na db.js para pegar os dados do banco
-    db.all(`SELECT * FROM places`, function(err, rows){
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows){
         if (err) {
             console.log(err)
         }

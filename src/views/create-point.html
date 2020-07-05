@@ -8,6 +8,7 @@
 
 {% block styles %}
     <link rel="stylesheet" href="styles/create-point.css">
+    <link rel="stylesheet" href="styles/modal.css">
 {% endblock styles %}
 
 {% block content %}
@@ -121,6 +122,13 @@
 
     </form>
 {% endblock content %}
+
+<!-- Incluindo o modal da pagina point-created.html, mas com uma condição n-if-->
+{% block modal %}
+    {% if saved %}
+        {%include "partials/point-created.html"%}}
+    {% endif %}
+{% endblock modal %}
 
 {% block scripts %}
     <script src="Javascript/Create-point.js"></script>

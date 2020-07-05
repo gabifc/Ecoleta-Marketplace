@@ -150,11 +150,11 @@ module.exports = db
     // depois que deletar, chamo outra fução callback anonima para inserir o erro
     // sempre q inserir um novo item nunca será o mesmo id, mesmo que deletado.
         /*
-        db.run(`DELETE FROM places WHERE id = ?`, [3], function(err){
+        db.run(`DELETE FROM places WHERE id = ?`, [5], function(err){
             if (err) {
                 console.log(err)
             }
             console.log("Registro deletado!")
-        }) 
-        */
-// })  DESCOMENTAR È DO DB SERIALIZE
+        }) */
+        
+//})  //DESCOMENTAR È DO DB SERIALIZE
