@@ -1,5 +1,4 @@
-# Ecoleta-Marketplace
-Projeto em desenvolvimento  
+# Ecoleta-Marketplace 
 Tecnologias utilizadas:  
 Linguagem: Javascript
 Node.js  
