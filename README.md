@@ -1,6 +1,5 @@
 # Ecoleta-Marketplace 
 Tecnologias utilizadas:  
-Linguagem: Javascript
+Javascript  
 Node.js  
-Banco de dados: SQL  
 SQLite
