@@ -144,6 +144,7 @@ function handleSelectedItem(event) {
    const itemLi = event.target
    // armazenar li com id em outra variavel
     const itemId = itemLi.dataset.id
+    console.log("ITEM ID: ", itemId)
     // feito isso, vou no html e removo a class selected pq eu vou criar outra com o javascript. 
 
     // add e remover classes de seleção no LI do HTML com JS
@@ -171,7 +172,7 @@ function handleSelectedItem(event) {
         // Se não estiver selecionado, add a seleção (Parte 5)
         selectedItems.push(itemId)
     }
-    // console.log(selectedItems) itens entrando e saindo do array
+    console.log(selectedItems) //itens entrando e saindo do array
 
     // atualiar o campo escondido com os itens selecionados (Parte 5)
    // document.querySelector("input[name=items]") foi colocado acima fora da função. Aqui eu só atribuo o valor.

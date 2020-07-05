@@ -14,33 +14,51 @@
     {% include "partials/page-header.html" %}
 
     <main>
+
+        {# BCO PASSO 4 - criar a condição  #}
+        {% if total > 0 %}
         <h4>
-            <strong>2 pontos</strong>
+            {# BCO PASSO 3 #}
+            <strong>{{ total }}
+                pontos</strong>
             encontrados
         </h4>
 
         <div class="cards">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518792528501-352f829886dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="Colectoria">
-                <h1>Colectoria</h1>
-                <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-                <p>Rio do Sul, Santa Catarina<br/>
-                    Guilherme Gemballa, Jardim America
-                    <br/>
-                    nº 260
-                </p>
-            </div>
+            {# BCO PASSO 1 - aqui ainda não criei o if condição então ele estava fora e depois foi colocado dentro da condição #}
+            {# Este formato chama todos os dados do banco de dados #}
+            {#  {{ places }}  #}
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80" alt="Colectoria">
-                <h1>PaperSider</h1>
-                <h3>Papéis e Papelão</h3>
-                <p>Rio do Sul, Santa Catarina<br/>
-                    Guilherme Gemballa, Jardim America
-                    <br/>
-                    nº 260
-                </p>
-            </div>
+            {# Mas eu preciso de um que venha no formato correto e não objeto, objeto. Vou usar uma estrutura de repetição. Preciso repetir um card com os valores dinâmicos #}
+            {# Cada place (variavel) é um item da tabela criada no passo 1 da criação do banco de dados no db.js. O places (iterator) é a tabela toda #}
+            {# Para um local nos nossos locais vc vai rodar isso. #}
+            {# Com esse card dinâmico já deve aparecer as informações cadastradas no banco no HTML #}
+            {% for place in places %}
+                <div class="card">
+                    <img src="{{ place.image }}" alt="{{ place.name }}">
+                    <h1>{{ place.name }}</h1>
+                    <h3>{{ place.items }}</h3>
+                    <p>{{ place.city }}
+                        ,
+                        {{ place.state }}
+                        <br/>
+                        {{ place.address }}
+                        <br/>
+                        {{ place.address2 }}
+                    </p>
+                </div>
+            {% endfor %}
+            {# BCO PASSO 2 #}
+            {# O proximo passo é atualizar a linha com a quantidade de itens encontrados. Ir para o server.js #}
         </div>
+
+    {# Esse bloco será exibido no caso de não haver local cadastrado. #}
+    {# Para testar acessar o db e rodar o bloco delete colocando as posições a serem deletadas. Usar somente a linha db serialize e a função deletar para testar, todas as outras funções devem ser comentadas #}
+    {% else %}
+    <h4><strong>Nenhum</strong> local encontrado</h4>
+        
+        {% endif %}
+
     </main>
 {% endblock content %}
+        

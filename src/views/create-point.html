@@ -13,7 +13,8 @@
 {% block content %}
     {% include "partials/page-header.html" %}
 
-    <form action="">
+<!-- savepoint foi configurado no server e o method post não mostra os dados coletados na url-->
+    <form action="/savepoint" method="POST">
 
         <h1>Cadastre seu ponto de coleta</h1>
 
@@ -43,13 +44,13 @@
 
             <div class="field-group">
                 <div class="field">
-                    <label for="adress">Endereço</label>
-                    <input type="text" name="adress" required="required">
+                    <label for="address">Endereço</label>
+                    <input type="text" name="address" required="required">
                 </div>
 
                 <div class="field">
-                    <label for="adress">Número/Complemento</label>
-                    <input type="text" name="adress2" required="required">
+                    <label for="address">Número/Complemento</label>
+                    <input type="text" name="address2" required="required">
                 </div>
             </div>
 
@@ -81,33 +82,33 @@
             </legend>
 
             <div class="items-grid">
-                <li data-id="1">
+                <li data-id="Lâmpadas">
                     <!--aqui tinha class selected-->
                     <img src="assets/icones/lampadas.svg" alt="ilustração de Lâmpadas">
                     <span>Lâmpadas</span>
                 </li>
-
-                <li data-id="2">
+                <!--colocar o data-id= como número no início para fazer os testes e depois mudar para o nome-->
+                <li data-id="Pilhas e Baterias">
                     <img src="assets/icones/baterias.svg" alt="ilustração de Pilhas e Baterias">
                     <span>Pilhas e Baterias</span>
                 </li>
 
-                <li data-id="3">
+                <li data-id="Papéis e Papelão">
                     <img src="assets/icones/papeis-papelao.svg" alt="ilustração de Papéis e Papelão">
                     <span>Papéis e Papelão</span>
                 </li>
 
-                <li data-id="4">
+                <li data-id="Resíduos Eletrônicos">
                     <img src="assets/icones/eletronicos.svg" alt="ilustração de Resíduos Eletrônicos">
                     <span>Resíduos Eletrônicos</span>
                 </li>
 
-                <li data-id="5">
+                <li data-id="Resíduos Orgânicos">
                     <img src="assets/icones/organicos.svg" alt="ilustração de Resíduos Orgânicos">
                     <span>Resíduos Orgânicos</span>
                 </li>
 
-                <li data-id="6">
+                <li data-id="Óleo de Cozinha">
                     <img src="assets/icones/oleo.svg" alt="ilustração de Óleo de Cozinha">
                     <span>Óleo de Cozinha</span>
                 </li>

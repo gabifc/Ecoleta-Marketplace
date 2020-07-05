@@ -5,12 +5,15 @@ const sqlite3 = require("sqlite3").verbose()
 
 // criar e iniciar o objeto de banco de dados que irá fazer as operações
 const db = new sqlite3.Database("./src/database/database.db")
+
+// DEPOIS de configurar o banco de dados, todas as etapas fazer o exports que será chamado no server.js
 module.exports = db
 
 // utilizar o objeto de banco de dados para nossas operações
 // serialize roda uma sequencia de codigos. Aqui ele roda uma função anonima
-/*
-db.serialize(() => {
+
+// DESCOMENTAR AQUI O DB SERIALIZE E A FUNÇÂO QUE QUERO UTILIZAR NO TESTE
+//db.serialize(() => {
     // Com comandos SQL eu vou:
 
     // *** 1 criar uma tabela ****
@@ -20,6 +23,7 @@ db.serialize(() => {
     // depois eu crio os campos que eu quero: o primeiro é id, segundo image, adress...
     // o último não tem vírgula.
     // Essa sequencia cria uma tabela no SQlite - ele vai rodar essas linhas e verificar se já existe. Se ela já existe ele não faz nada se ela não existe ele cria.
+    /*
     db.run(`
        CREATE TABLE IF NOT EXISTS places (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,8 +37,8 @@ db.serialize(() => {
         );
     
     `)
-
 */
+
     // *** 2 inserir dados na tabela ***
 
     // INSERT INTO places () VALUES (); = colaca na places valores. No primeiro () eu coloco os campos e no segundo os valores
@@ -54,7 +58,7 @@ db.serialize(() => {
  */
 
 
-    // 2.1 para ficar mais dinâmico eu crio uma const e coloco todos os valores depois das `` do db.run e chamo a const dentro dos () do db.run
+    // 2.1 para ficar mais dinâmico eu crio uma const e coloco todos os valores depois das `` do db.run e chamo a const dentro dos () do db.run. Estes dados image, name,etc são os name definidos lá no html no form
     /*
     const query = `
     INSERT INTO places (
@@ -145,11 +149,12 @@ db.serialize(() => {
     // para deletar um dado específico eu uso WHERE e especifico o item e a posição/valor [1]
     // depois que deletar, chamo outra fução callback anonima para inserir o erro
     // sempre q inserir um novo item nunca será o mesmo id, mesmo que deletado.
-    /*
-        db.run(`DELETE FROM places WHERE id = ?`, [1], function(err){
+        /*
+        db.run(`DELETE FROM places WHERE id = ?`, [3], function(err){
             if (err) {
                 console.log(err)
             }
             console.log("Registro deletado!")
         }) 
-}) */
+        */
+// })  DESCOMENTAR È DO DB SERIALIZE
