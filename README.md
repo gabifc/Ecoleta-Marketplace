@@ -2,7 +2,7 @@
 Projeto Full MVC.  
 Aplicação de estudo desenvolvido durante a Next Level Week - Rocketseat.  
 
-Tecnologias utilizadas: HTML, CSS, Javascript, Node e SQLite3.
+Tecnologias utilizadas: HTML, CSS, Javascript, Consumo de API, Node, Nodemon, Nunjucks e banco de dados SQLite3.
 
 # Proposta 💡
 Marketplace de locais de coleta seletiva que permite ao usuário cadastrar e buscar por cidade pontos de reciclagem de diferentes tipos de resíduos.
